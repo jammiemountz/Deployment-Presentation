@@ -41,6 +41,16 @@ Changing `baseurl` to my repo-name cleared that up for me -
 
 Commenting out `url` will help as well
 
+## GITHUB PAGES DOMAIN NAME
+
+Create a new file in base layer of the repo called `CNAME`, no file type. On the first line, have the name of your domain that you've registered.
+
+Go to where your domain is registered and edit your A records. Remove the IP addresses there and point those records towards github -
+
+`192.30.252.154`
+
+`192.30.252.153`
+
 ## DIGITAL OCEAN DEPLOY -
 make new droplet, chose an app stack LAMP
 apt-get install git-core
