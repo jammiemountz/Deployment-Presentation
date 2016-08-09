@@ -30,10 +30,13 @@ Grab the URL for your repo on github.com (make a new one if you need to)
 `git push origin master`
 
 ## GH PAGES DEPLOY
-(in github) create gh-pages
-go to settings, see where its live
-notice config needs updating
-(get this working)
+(in github) create gh-pages branch
+
+Go to settings, see where its lives.
+
+notice config.yml MAY updating - you'll know because some assets won't pull through and you'll see the error in the console.
+
+Changing 
 
 ## DIGITAL OCEAN DEPLOY -
 make new droplet, chose an app stack LAMP
