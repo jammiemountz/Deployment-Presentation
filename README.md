@@ -49,21 +49,62 @@ Go to where your domain is registered and edit your A records. Remove the IP add
 
 `192.30.252.154`
 
-`192.30.252.153`
+`192.30.252.153``
 
 Good directions for other records can be found [here](https://help.github.com/articles/setting-up-an-apex-domain/).
 
-Back in your repo's github settings, put the domain
+Back in your repo's github settings, put the domain name in your url, or a slash in baseurl, or both. I had trouble figuring this out, I'm wondering if github isn't running jekyll serve as soon as I deploy and it takes a second for changes in config.yml to go through...
 
 ## DIGITAL OCEAN DEPLOY -
+
 make new droplet, chose an app stack LAMP
-apt-get install git-core
 
-RUBY
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-curl -L https://get.rvm.io | bash -s stable --ruby=2.0.0
-	1.	apt-get install ruby-dev
+Remote log into your droplet - `ssh root@[your-ip-address]`
 
+It'll prompt you to reset your password.
 
-JEKYLL
-gem install jekyll
+Install ruby [(buena suerte de nuevo)](https://gorails.com/setup/ubuntu/14.04)
+
+Install jekyll - `gem install jekyll`
+
+** THE FOLLOWING WAS MORE OR LESS LIFTED FROM [DIGITAL OCEAN'S BLOG POST](https://www.digitalocean.com/community/tutorials/how-to-deploy-jekyll-blogs-with-git) **
+
+Now, go to home directory
+
+`cd ~/`
+
+Make a repository for your project and go into it
+
+`mkdir repos && cd repos`
+
+`mkdir awesomeblog.git && cd awesomeblog.git`
+
+Initialize a bare git repo
+
+`git init --bare`
+
+Set up a post-receive hook - this is a shell script that Git runs when files are pushed to a repository.
+
+`cd hooks`
+
+`touch post-receive`
+
+`nano post-receive`
+
+Now paste in the following script, adjusting the variables accordingly. GIT_REPO is the path to the bare repository created in the previous step, TMP_GIT_CLONE is a location where the script will check out the files to and build the blog before copying them to /var/www. PUBLIC_WWW is the path where the final site will reside. In this example (assuming your web root is /var/www) the site would appear at http://example.org/awesomeblog, whereas it would appear at http://example.org if PUBLIC_WWW read /var/www instead.
+
+```
+#!/bin/bash -l
+GIT_REPO=$HOME/repos/awesomeblog.git
+TMP_GIT_CLONE=$HOME/tmp/git/awesomeblog
+PUBLIC_WWW=/var/www/awesomeblog
+
+git clone $GIT_REPO $TMP_GIT_CLONE
+jekyll build --source $TMP_GIT_CLONE --destination $PUBLIC_WWW
+rm -Rf $TMP_GIT_CLONE
+exit
+```
+
+Save the file by pressing control+O and hitting the enter key. Then give the file executable permissions.
+
+`chmod +x post-receive`
