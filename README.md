@@ -4,7 +4,7 @@
 Jekyll allows you to use smart-templates, config vars, css pre-compilers like sass... and output a regular site
 
 ### To start a new Jekyll site -
-Install ruby and a version manager on your machine (good luck.)
+Install ruby and a version manager on your machine [(good luck.)](https://gorails.com/setup/osx/10.11-el-capitan)
 
 `gem install jekyll`
 
@@ -23,20 +23,20 @@ In the repo of your site:
 
 Grab the URL for your repo on github.com (make a new one if you need to)
 
-`git remote add origin [url]`
+Add the repo as a remote - `git remote add origin [url]`
 
-`git remote -v`
+This will show you if it worked - `git remote -v`
 
-`git push origin master`
+Now you're able to `git push origin master`
 
-## GH PAGES DEPLOY
-(in github) create gh-pages branch
+## GITHUB PAGES DEPLOY
+In Github, create a `gh-pages` branch. Naming is important! Github pages will only publish from a branch named `gh-pages`.
 
-Go to settings, see where its lives.
+Go to settings, see where its lives - the URL will be your account and the name of your repo.
 
 notice config.yml MAY updating - you'll know because some assets won't pull through and you'll see the error in the console.
 
-Changing 
+Changing
 
 ## DIGITAL OCEAN DEPLOY -
 make new droplet, chose an app stack LAMP
