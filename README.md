@@ -5,17 +5,29 @@ Jekyll allows you to use smart-templates, config vars, css pre-compilers like sa
 
 ### To start a new Jekyll site -
 Install ruby and a version manager on your machine (good luck.)
+
 `gem install jekyll`
+
 `jekyll new test-site`
+
 `cd` into your site
+
 `bundle install` maybe, you might not need to
+
 `jekyll serve`
 
 ## Connect with github -
-git init
-git remote add origin [url]
-git remote -v
-git push origin master
+In the repo of your site:
+
+`git init`
+
+Grab the URL for your repo on github.com (make a new one if you need to)
+
+`git remote add origin [url]`
+
+`git remote -v`
+
+`git push origin master`
 
 ## GH PAGES DEPLOY
 (in github) create gh-pages
