@@ -43,13 +43,15 @@ Commenting out `url` will help as well
 
 ## GITHUB PAGES DOMAIN NAME
 
-Create a new file in base layer of the repo called `CNAME`, no file type. On the first line, have the name of your domain that you've registered.
+Create a new file in base layer of the repo called `CNAME`, no file type. On the first line, have the name of your domain that you've registered. Github will actually do this step for you if you don't though.
 
 Go to where your domain is registered and edit your A records. Remove the IP addresses there and point those records towards github -
 
 `192.30.252.154`
 
 `192.30.252.153`
+
+Back in your repo's github settings, put the domain
 
 ## DIGITAL OCEAN DEPLOY -
 make new droplet, chose an app stack LAMP
