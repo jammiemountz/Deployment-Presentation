@@ -109,4 +109,34 @@ Save the file by pressing control+O and hitting the enter key. Then give the fil
 
 `chmod +x post-receive`
 
-Push up using your credentials you used to log into the server
+You can push up with the same credentials from your server
+
+** IF THIS DOESN'T WORK... (it didn't for me)... lets do it manually. **
+
+Clone down your repository into your home directory
+
+Use Jekyll to build into your public folder -
+
+`jekyll build --source . --destination /var/www/html/Deployment-Presentation`
+
+Notice your config.yml may need some tweaking again.
+
+## DIGITAL OCEAN DOMAIN NAME
+
+Under networking, add a Domain with your droplet.
+
+You can choose your droplet from the dropdown, and add the name you bought in the Domain box.
+
+Where you bought your domain name, update your Nameservers to Digital Ocean's
+
+`ns1.digitalocean.com`
+
+`ns2.digitalocean.com`
+
+`ns3.digitalocean.com`
+
+Use `dig` command to see if it propogated -
+
+`dig jammie.tech`
+
+Voila. Maybe. It can take a while to propogate.
