@@ -1,12 +1,15 @@
 # How to deploy a Jekyll site on GitHub Pages or Digital Ocean
 
 ## Brief intro to Jekyll - a static site generator
-allows you to use smart-templates, config vars, css pre-compilers like sass... and output a regular site
-gem install jekyll
-jekyll new test-site
-cd into it
-bundle install
-jekyll serve
+Jekyll allows you to use smart-templates, config vars, css pre-compilers like sass... and output a regular site
+
+### To start a new Jekyll site -
+Install ruby and a version manager on your machine (good luck.)
+`gem install jekyll`
+`jekyll new test-site`
+`cd` into your site
+`bundle install` maybe, you might not need to
+`jekyll serve`
 
 ## Connect with github -
 git init
