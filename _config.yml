@@ -19,7 +19,7 @@ description: > # this means to ignore newlines until "baseurl:"
 
 #FOR GH-PAGES WITH DOMAIN NAME
 baseurl: "/" # the subpath of your site, e.g. /blog
-url:"http://jammie.space/"
+# url: "http://jammie.space/"
 
 twitter_username: jekyllrb
 github_username:  jekyll

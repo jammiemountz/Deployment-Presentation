@@ -51,6 +51,8 @@ Go to where your domain is registered and edit your A records. Remove the IP add
 
 `192.30.252.153`
 
+Good directions for other records can be found [here](https://help.github.com/articles/setting-up-an-apex-domain/).
+
 Back in your repo's github settings, put the domain
 
 ## DIGITAL OCEAN DEPLOY -
