@@ -36,7 +36,10 @@ Go to settings, see where its lives - the URL will be your account and the name 
 
 notice config.yml MAY updating - you'll know because some assets won't pull through and you'll see the error in the console.
 
-Changing
+Changing `baseurl` to my repo-name cleared that up for me -
+`baseurl: "/Deployment-Presentation"`
+
+Commenting out `url` will help as well
 
 ## DIGITAL OCEAN DEPLOY -
 make new droplet, chose an app stack LAMP
