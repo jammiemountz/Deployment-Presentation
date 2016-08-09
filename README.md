@@ -135,7 +135,7 @@ Where you bought your domain name, update your Nameservers to Digital Ocean's
 
 `ns3.digitalocean.com`
 
-Use `dig` command to see if it propogated -
+On hover, change your A-records to point towards your droplet's IP
 
 `dig jammie.tech`
 
