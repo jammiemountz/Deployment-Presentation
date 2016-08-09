@@ -108,3 +108,5 @@ exit
 Save the file by pressing control+O and hitting the enter key. Then give the file executable permissions.
 
 `chmod +x post-receive`
+
+Push up using your credentials you used to log into the server
